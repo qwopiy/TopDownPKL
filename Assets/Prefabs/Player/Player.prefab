@@ -9,10 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8969834104475823726}
+  - component: {fileID: 357405108209713431}
+  - component: {fileID: 2550579692245553457}
+  - component: {fileID: 1619776915121993004}
   - component: {fileID: 3416195660750293140}
   - component: {fileID: 3213712803624335719}
   - component: {fileID: 9203192059751722273}
-  - component: {fileID: 1619776915121993004}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -35,6 +37,49 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &357405108209713431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677448494632326128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4164ac2422bcc364abfffed824d4b482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitStatsManager
+  characterData: {fileID: 11400000, guid: 36938fd49e934f0428e20b6d7a080dfd, type: 2}
+  unitDied: {fileID: 11400000, guid: 05656b85f6f350e41a7ddaa5aaaf0a72, type: 2}
+  currentHealth: 0
+--- !u!114 &2550579692245553457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677448494632326128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d34274c23959f64898af592d2064fc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnchorAssigner
+  playerTransformAnchor: {fileID: 11400000, guid: 209f3ccd083522b4cab71143cd1b29db, type: 2}
+--- !u!114 &1619776915121993004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677448494632326128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5939cc4e8a5b964a9a7ba3f5ee0d9a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  inputReader: {fileID: 11400000, guid: 137b900cda3b68844bce456bc835c6e3, type: 2}
+  moveSpeed: 5
+  rotationSpeed: 15
 --- !u!33 &3416195660750293140
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -117,18 +162,3 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1619776915121993004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1677448494632326128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5939cc4e8a5b964a9a7ba3f5ee0d9a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  inputReader: {fileID: 11400000, guid: 137b900cda3b68844bce456bc835c6e3, type: 2}
-  moveSpeed: 5
-  rotationSpeed: 15

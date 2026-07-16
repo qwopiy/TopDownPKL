@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class IsometricCameraMovement : MonoBehaviour
 {
+    [SerializeField] TransformAnchorSO playerTransformAnchor;
+
     private Transform target; 
 
     [SerializeField] private Vector3 offset = new Vector3(-10, 10, -10); 
@@ -12,7 +14,7 @@ public class IsometricCameraMovement : MonoBehaviour
 
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        target = playerTransformAnchor.value;
     }
     void LateUpdate()
     {

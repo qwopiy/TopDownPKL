@@ -5,10 +5,11 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("references")]
     [SerializeField] private InputReader inputReader;
+    private UnitStatsManager unitStatsManager;
 
     [Header("Movement Settings")]
-    [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float rotationSpeed = 15f;
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float rotationSpeed;
 
     private CharacterController controller;
     private Transform cameraTransform;
@@ -19,6 +20,10 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        unitStatsManager = GetComponent<UnitStatsManager>();
+
+        moveSpeed = unitStatsManager.CurrentMovementSpeed;
+        rotationSpeed = unitStatsManager.CurrentRotationSpeed;
 
         cameraTransform = Camera.main.transform;
 
