@@ -14,5 +14,8 @@ public class CharacterDataSO : ScriptableObject
     [Header("Combat Stats")]
     public float attackDamage = 10f;
     public float attackRange = 3f;
-    public float attackRate = 1f; 
+    public float attackRate = 1f;
+
+    [Header("Attack Behavior")]
+    public AttackBehaviorSO attackBehavior;
 }

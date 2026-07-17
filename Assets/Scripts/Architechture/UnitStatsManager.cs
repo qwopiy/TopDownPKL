@@ -9,9 +9,14 @@ public class UnitStatsManager : MonoBehaviour
     private float currentMovementSpeed;
     private float currentAttackDamage;
     private float currentRotationSpeed;
+    private float currentAttackRate;
+    private float currentAttackRange;
 
     public float CurrentMovementSpeed => currentMovementSpeed;
     public float CurrentAttackDamage => currentAttackDamage;
+    public float CurrentAttackRate => currentAttackRate;
+
+    public float CurrentAttackRange => currentAttackRange;
 
     public float CurrentRotationSpeed => currentRotationSpeed;
     public CharacterDataSO CharacterData => characterData;
@@ -29,6 +34,8 @@ public class UnitStatsManager : MonoBehaviour
             currentMovementSpeed = characterData.movementSpeed;
             currentAttackDamage = characterData.attackDamage;
             currentRotationSpeed = characterData.rotationSpeed;
+            currentAttackRate = characterData.attackRate;
+            currentAttackRange = characterData.attackRange;
         }
         else
         {

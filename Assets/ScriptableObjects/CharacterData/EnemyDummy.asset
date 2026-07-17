@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba472003bfe54c044b31a80b532b9d9e, type: 3}
-  m_Name: Ananas
+  m_Name: EnemyDummy
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDataSO
-  characterName: Ananas
+  characterName: EnemyDummy
   maxHealth: 100
   movementSpeed: 5
   rotationSpeed: 15
