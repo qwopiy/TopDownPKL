@@ -65,6 +65,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1677448494632326128, guid: bbde98e7729916b4eb74a88898fb2f66, type: 3}
       insertIndex: 6
       addedObject: {fileID: 1318291178180553724}
+    - targetCorrespondingSourceObject: {fileID: 1677448494632326128, guid: bbde98e7729916b4eb74a88898fb2f66, type: 3}
+      insertIndex: 7
+      addedObject: {fileID: 4528489959782406839}
   m_SourcePrefab: {fileID: 100100000, guid: bbde98e7729916b4eb74a88898fb2f66, type: 3}
 --- !u!1 &6462626486291911510 stripped
 GameObject:
@@ -113,4 +116,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitSkillManager
   equippedSkills:
+  - {fileID: 11400000, guid: a6865c4e7b26b0e44b07f5977c9b2ac0, type: 2}
+--- !u!114 &4528489959782406839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6462626486291911510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f55055985de9b3248941ab6a482428b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PassiveSkillManager
+  passiveSkills:
   - {fileID: 11400000, guid: 4bf5889b67b6e2b4b8ea7929cf8747b0, type: 2}

@@ -11,7 +11,7 @@ public class ApplyUpgradeTest : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //squadAnchor.ApplyUpgrade(upgradeData);
-            other.GetComponent<UnitSkillManager>()?.CastSkill(0);
+            other.GetComponent<ActiveSkillManager>()?.CastSkill(0);
         }
     }
 }

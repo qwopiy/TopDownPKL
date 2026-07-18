@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -52,6 +53,25 @@ public class UnitStatsManager : MonoBehaviour
         {
             activeModifiers.Add(mod);
         }
+    }
+
+    public void ApplyTemporaryUpgrade(UpgradeDataSO upgrade, float duration)
+    {
+        ApplyUpgrade(upgrade);
+        StartCoroutine(RemoveUpgradeAfterDuration(upgrade, duration));
+    }
+
+    public void RemoveUpgrade(UpgradeDataSO upgrade)
+    {
+        foreach (var mod in upgrade.modifiers)
+        {
+            activeModifiers.Remove(mod);
+        }
+    }
+    private IEnumerator RemoveUpgradeAfterDuration(UpgradeDataSO upgrade, float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        RemoveUpgrade(upgrade);
     }
 
     private float CalculateStat(StatType type, float baseValue)

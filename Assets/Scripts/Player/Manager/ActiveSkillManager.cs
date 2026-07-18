@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitSkillManager : MonoBehaviour
+public class ActiveSkillManager : MonoBehaviour
 {
     [Header("Equipped Skills")]
     [SerializeField] private List<SkillDataSO> equippedSkills = new List<SkillDataSO>();
