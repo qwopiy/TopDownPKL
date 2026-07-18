@@ -10,7 +10,8 @@ public class ApplyUpgradeTest : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            squadAnchor.ApplyUpgrade(upgradeData);
+            //squadAnchor.ApplyUpgrade(upgradeData);
+            other.GetComponent<UnitSkillManager>()?.CastSkill(0);
         }
     }
 }

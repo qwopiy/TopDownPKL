@@ -14,15 +14,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8969834104475823726, guid: bbde98e7729916b4eb74a88898fb2f66, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 4.81
       objectReference: {fileID: 0}
     - target: {fileID: 8969834104475823726, guid: bbde98e7729916b4eb74a88898fb2f66, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.8499997
       objectReference: {fileID: 0}
     - target: {fileID: 8969834104475823726, guid: bbde98e7729916b4eb74a88898fb2f66, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -12.178406
       objectReference: {fileID: 0}
     - target: {fileID: 8969834104475823726, guid: bbde98e7729916b4eb74a88898fb2f66, type: 3}
       propertyPath: m_LocalRotation.w
@@ -62,6 +62,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1677448494632326128, guid: bbde98e7729916b4eb74a88898fb2f66, type: 3}
       insertIndex: 5
       addedObject: {fileID: -757230788495243456}
+    - targetCorrespondingSourceObject: {fileID: 1677448494632326128, guid: bbde98e7729916b4eb74a88898fb2f66, type: 3}
+      insertIndex: 6
+      addedObject: {fileID: 1318291178180553724}
   m_SourcePrefab: {fileID: 100100000, guid: bbde98e7729916b4eb74a88898fb2f66, type: 3}
 --- !u!1 &6462626486291911510 stripped
 GameObject:
@@ -81,6 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnchorAssigner
   playerTransformAnchor: {fileID: 11400000, guid: 209f3ccd083522b4cab71143cd1b29db, type: 2}
+  squadAnchorSO: {fileID: 11400000, guid: 986b56c95b54e2b479ee39cbd4770e5c, type: 2}
 --- !u!114 &-757230788495243456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,3 +100,17 @@ MonoBehaviour:
   inputReader: {fileID: 11400000, guid: 137b900cda3b68844bce456bc835c6e3, type: 2}
   moveSpeed: 0
   rotationSpeed: 0
+--- !u!114 &1318291178180553724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6462626486291911510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dfaea4590a889249bbde362d55dcd3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitSkillManager
+  equippedSkills:
+  - {fileID: 11400000, guid: 4bf5889b67b6e2b4b8ea7929cf8747b0, type: 2}
