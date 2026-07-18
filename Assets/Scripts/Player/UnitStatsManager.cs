@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class UnitStatsManager : MonoBehaviour
@@ -5,16 +6,18 @@ public class UnitStatsManager : MonoBehaviour
     [SerializeField] private CharacterDataSO characterData;
     [SerializeField] private GameEventSO unitDied;
 
-    [SerializeField] private float currentHealth;
+    private List<StatsModifier> activeModifiers = new List<StatsModifier>();
+
+    private float currentHealth;
     private float currentMovementSpeed;
     private float currentAttackDamage;
     private float currentRotationSpeed;
     private float currentAttackRate;
     private float currentAttackRange;
 
-    public float CurrentMovementSpeed => currentMovementSpeed;
-    public float CurrentAttackDamage => currentAttackDamage;
-    public float CurrentAttackRate => currentAttackRate;
+    public float CurrentMovementSpeed => CalculateStat(StatType.MovementSpeed, currentMovementSpeed);
+    public float CurrentAttackDamage => CalculateStat(StatType.AttackDamage, currentAttackDamage);
+    public float CurrentAttackRate => CalculateStat(StatType.AttackSpeed, currentAttackRate);
 
     public float CurrentAttackRange => currentAttackRange;
 
@@ -41,6 +44,37 @@ public class UnitStatsManager : MonoBehaviour
         {
             Debug.LogWarning($"CharacterDataSO belum dipasang di GameObject: {gameObject.name}");
         }
+    }
+
+    public void ApplyUpgrade(UpgradeDataSO upgrade)
+    {
+        foreach (var mod in upgrade.modifiers)
+        {
+            activeModifiers.Add(mod);
+        }
+    }
+
+    private float CalculateStat(StatType type, float baseValue)
+    {
+        float finalValue = baseValue;
+        float percentSum = 0;
+
+        foreach (var mod in activeModifiers)
+        {
+            if (mod.statType != type) continue;
+
+            if (mod.modType == ModifierType.Flat)
+            {
+                finalValue += mod.value;
+            }
+            else if (mod.modType == ModifierType.Percent)
+            {
+                percentSum += mod.value; 
+            }
+        }
+
+        finalValue *= (1f + percentSum);
+        return finalValue;
     }
 
     public void TakeDamage(float amount)
