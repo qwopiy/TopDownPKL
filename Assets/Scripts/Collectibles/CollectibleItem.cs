@@ -16,7 +16,7 @@ public class CollectibleItem : MonoBehaviour
 
     public void Collect()
     {
-        PlayerManager.Instance.currentGold += amount;
+        //UpgradeManager.Instance.currentGold += amount;
         Destroy(gameObject);
     }
 }
