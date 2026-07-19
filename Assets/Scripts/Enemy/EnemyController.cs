@@ -1,21 +1,30 @@
-using System;
 using UnityEngine;
-using UnityEngine.AI;   
+using UnityEngine.AI;
 
-public class EnemyControler : MonoBehaviour
+[RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(PlayerDetector))]
+public class EnemyController : MonoBehaviour
 {
-    public Transform Target;
-    public NavMeshAgent Agent;
+    [SerializeField] private Transform towerTarget;
 
-    private Vector3 lastTargetPos;
+    private NavMeshAgent agent;
+    private PlayerDetector detector;
 
-    void Update()
+    private void Awake()
     {
-        if (Vector3.Distance(lastTargetPos, Target.position) > 1f)
+        agent = GetComponent<NavMeshAgent>();
+        detector = GetComponent<PlayerDetector>();
+    }
+
+    private void Update()
+    {
+        if (detector.DetectedPlayer != null)
         {
-            lastTargetPos = Target.position;
-            Agent.SetDestination(Target.position);
-            print(lastTargetPos);
+            agent.SetDestination(detector.DetectedPlayer.position);
+        }
+        else
+        {
+            agent.SetDestination(towerTarget.position);
         }
     }
 }
