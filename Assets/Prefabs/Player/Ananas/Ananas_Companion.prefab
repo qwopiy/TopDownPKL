@@ -64,11 +64,14 @@ PrefabInstance:
       insertIndex: 4
       addedObject: {fileID: 6143733951067585032}
     - targetCorrespondingSourceObject: {fileID: 1677448494632326128, guid: bbde98e7729916b4eb74a88898fb2f66, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: -3949091441937964075}
+      insertIndex: 5
+      addedObject: {fileID: 5708189467139544112}
+    - targetCorrespondingSourceObject: {fileID: 1677448494632326128, guid: bbde98e7729916b4eb74a88898fb2f66, type: 3}
+      insertIndex: 6
+      addedObject: {fileID: -3673689714412076151}
     - targetCorrespondingSourceObject: {fileID: 1677448494632326128, guid: bbde98e7729916b4eb74a88898fb2f66, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5708189467139544112}
+      addedObject: {fileID: -3949091441937964075}
   m_SourcePrefab: {fileID: 100100000, guid: bbde98e7729916b4eb74a88898fb2f66, type: 3}
 --- !u!1 &7600590003982322686 stripped
 GameObject:
@@ -90,6 +93,35 @@ MonoBehaviour:
   currentState: 0
   playerTransformAnchor: {fileID: 11400000, guid: 209f3ccd083522b4cab71143cd1b29db, type: 2}
   stopDistanceBeforePlayer: 2
+  maximumDistanceFromPlayer: 5
+--- !u!114 &5708189467139544112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7600590003982322686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 262e95129aa4e9442a36735813c229b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RecruitableCompanion
+  squadSet: {fileID: 11400000, guid: 986b56c95b54e2b479ee39cbd4770e5c, type: 2}
+  onCompanionRecruitedEvent: {fileID: 11400000, guid: 1fed76b5ec4e1ee44a9ffcd083f3de8b, type: 2}
+--- !u!114 &-3673689714412076151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7600590003982322686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f55055985de9b3248941ab6a482428b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PassiveSkillManager
+  passiveSkills:
+  - {fileID: 11400000, guid: 4bf5889b67b6e2b4b8ea7929cf8747b0, type: 2}
 --- !u!65 &-3949091441937964075
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -111,17 +143,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3, y: 2, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5708189467139544112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7600590003982322686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 262e95129aa4e9442a36735813c229b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RecruitableCompanion
-  squadSet: {fileID: 11400000, guid: 986b56c95b54e2b479ee39cbd4770e5c, type: 2}
-  onCompanionRecruitedEvent: {fileID: 11400000, guid: 1fed76b5ec4e1ee44a9ffcd083f3de8b, type: 2}
