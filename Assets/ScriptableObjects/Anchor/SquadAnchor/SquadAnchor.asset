@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a757c26d27e754ca110c94eecdc908, type: 3}
   m_Name: SquadAnchor
   m_EditorClassIdentifier: Assembly-CSharp::SquadAnchorSO
-  members: []
+  members:
+  - {fileID: 0}

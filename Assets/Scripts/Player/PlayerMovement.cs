@@ -22,9 +22,6 @@ public class PlayerMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
         unitStatsManager = GetComponent<UnitStatsManager>();
 
-        moveSpeed = unitStatsManager.CurrentMovementSpeed;
-        rotationSpeed = unitStatsManager.CurrentRotationSpeed;
-
         cameraTransform = Camera.main.transform;
 
         inputReader.MovementChanged += OnMove;
@@ -37,6 +34,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        moveSpeed = unitStatsManager.CurrentMovementSpeed;
+        rotationSpeed = unitStatsManager.CurrentRotationSpeed;
+
         Vector3 forward = cameraTransform.forward;
         Vector3 right = cameraTransform.right;
 

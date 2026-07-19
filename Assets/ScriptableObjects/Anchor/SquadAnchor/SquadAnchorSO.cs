@@ -14,6 +14,30 @@ public class SquadAnchorSO : ScriptableObject
         }
     }
 
+    public void ApplyUpgrade(UpgradeDataSO upgrade)
+    {
+        foreach (var member in members)
+        {
+            UnitStatsManager statsManager = member.GetComponent<UnitStatsManager>();
+            if (statsManager != null)
+            {
+                statsManager.ApplyUpgrade(upgrade);
+            }
+        }
+    }
+
+    public void ApplyTemporaryUpgrade(UpgradeDataSO upgrade, float duration)
+    {
+        foreach (var member in members)
+        {
+            UnitStatsManager statsManager = member.GetComponent<UnitStatsManager>();
+            if (statsManager != null)
+            {
+                statsManager.ApplyTemporaryUpgrade(upgrade, duration);
+            }
+        }
+    }
+
     public void Remove(GameObject obj)
     {
         if (members.Contains(obj))
