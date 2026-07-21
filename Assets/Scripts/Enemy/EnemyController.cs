@@ -1,30 +1,34 @@
 using UnityEngine;
-using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(EnemyMovement))]
 [RequireComponent(typeof(PlayerDetector))]
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private Transform towerTarget;
-
-    private NavMeshAgent agent;
+    private EnemyMovement movement;
     private PlayerDetector detector;
+
+    private Transform tower;
 
     private void Awake()
     {
-        agent = GetComponent<NavMeshAgent>();
+        movement = GetComponent<EnemyMovement>();
         detector = GetComponent<PlayerDetector>();
+
+        GameObject towerObject = GameObject.FindGameObjectWithTag("Tower");
+
+        if (towerObject != null)
+            tower = towerObject.transform;
     }
 
     private void Update()
     {
         if (detector.DetectedPlayer != null)
         {
-            agent.SetDestination(detector.DetectedPlayer.position);
+            movement.MoveTo(detector.DetectedPlayer.position);
         }
-        else
+        else if (tower != null)
         {
-            agent.SetDestination(towerTarget.position);
+            movement.MoveTo(tower.position);
         }
     }
 }
