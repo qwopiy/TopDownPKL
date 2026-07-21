@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 3437378491772269580}
   - component: {fileID: 2567535746561986189}
   m_Layer: 0
-  m_Name: EnemyModel
+  m_Name: Warior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0e52e2989a21b4b8f1bd9a1bcdb0b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStatsManager
-  enemyData: {fileID: 0}
+  enemyData: {fileID: 11400000, guid: ab96805d2d0283e44a63078c98e4de68, type: 2}
 --- !u!114 &2567535746561986189
 MonoBehaviour:
   m_ObjectHideFlags: 0
