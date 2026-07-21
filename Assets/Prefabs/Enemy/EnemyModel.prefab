@@ -16,9 +16,11 @@ GameObject:
   - component: {fileID: 4692597851307967042}
   - component: {fileID: 1638871999436397281}
   - component: {fileID: 7425606544211416403}
+  - component: {fileID: 3437378491772269580}
+  - component: {fileID: 2567535746561986189}
   m_Layer: 0
   m_Name: EnemyModel
-  m_TagString: Tower
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,7 +175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93c8d9d088777f342a2db3fb728892c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
-  towerTarget: {fileID: 0}
 --- !u!114 &7425606544211416403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,8 +187,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64df11603a1a55840a93e7ed0ff6b28e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDetector
-  detectionRadius: 6
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   scanInterval: 0.2
+--- !u!114 &3437378491772269580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2778943790965462831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0e52e2989a21b4b8f1bd9a1bcdb0b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyStatsManager
+  enemyData: {fileID: 0}
+--- !u!114 &2567535746561986189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2778943790965462831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1650f4c9de7253459583646f13a239f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement

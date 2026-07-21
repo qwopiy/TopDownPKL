@@ -420,9 +420,9 @@ GameObject:
   - component: {fileID: 360622941}
   - component: {fileID: 360622940}
   - component: {fileID: 360622939}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerModel
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1254,7 +1254,7 @@ GameObject:
   - component: {fileID: 1263570238}
   m_Layer: 0
   m_Name: Tower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2024,28 +2024,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1568511563}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1707350456 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2778943790965462831, guid: e25ac50238a4f7e4eb5a9410aa63f45f, type: 3}
-  m_PrefabInstance: {fileID: 8176575902717416391}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1707350464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1707350456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64df11603a1a55840a93e7ed0ff6b28e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerDetector
-  detectionRadius: 6
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  scanInterval: 0.2
 --- !u!1 &1778093837
 GameObject:
   m_ObjectHideFlags: 0
@@ -2677,10 +2655,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1638871999436397281, guid: e25ac50238a4f7e4eb5a9410aa63f45f, type: 3}
-      propertyPath: towerTarget
-      value: 
-      objectReference: {fileID: 1263570241}
     - target: {fileID: 2778943790965462831, guid: e25ac50238a4f7e4eb5a9410aa63f45f, type: 3}
       propertyPath: m_Name
       value: EnemyModel
@@ -2689,6 +2663,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 3437378491772269580, guid: e25ac50238a4f7e4eb5a9410aa63f45f, type: 3}
+      propertyPath: enemyData
+      value: 
+      objectReference: {fileID: 11400000, guid: ab96805d2d0283e44a63078c98e4de68, type: 2}
     - target: {fileID: 4523167676655913661, guid: e25ac50238a4f7e4eb5a9410aa63f45f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.63917
@@ -2736,10 +2714,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2778943790965462831, guid: e25ac50238a4f7e4eb5a9410aa63f45f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1707350464}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e25ac50238a4f7e4eb5a9410aa63f45f, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
