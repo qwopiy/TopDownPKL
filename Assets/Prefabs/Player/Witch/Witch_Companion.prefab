@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5701213900881389240
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1679424419653922518, guid: ac7ade829e475574497e18bee01fec83, type: 3}
+      propertyPath: m_Name
+      value: Witch_Companion
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019111473605178476, guid: ac7ade829e475574497e18bee01fec83, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019111473605178476, guid: ac7ade829e475574497e18bee01fec83, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019111473605178476, guid: ac7ade829e475574497e18bee01fec83, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019111473605178476, guid: ac7ade829e475574497e18bee01fec83, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019111473605178476, guid: ac7ade829e475574497e18bee01fec83, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019111473605178476, guid: ac7ade829e475574497e18bee01fec83, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019111473605178476, guid: ac7ade829e475574497e18bee01fec83, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019111473605178476, guid: ac7ade829e475574497e18bee01fec83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019111473605178476, guid: ac7ade829e475574497e18bee01fec83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019111473605178476, guid: ac7ade829e475574497e18bee01fec83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1679424419653922518, guid: ac7ade829e475574497e18bee01fec83, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 3605737796190676951}
+    - targetCorrespondingSourceObject: {fileID: 1679424419653922518, guid: ac7ade829e475574497e18bee01fec83, type: 3}
+      insertIndex: 5
+      addedObject: {fileID: -248613338311705522}
+    - targetCorrespondingSourceObject: {fileID: 1679424419653922518, guid: ac7ade829e475574497e18bee01fec83, type: 3}
+      insertIndex: 6
+      addedObject: {fileID: -6357960968569207405}
+  m_SourcePrefab: {fileID: 100100000, guid: ac7ade829e475574497e18bee01fec83, type: 3}
+--- !u!1 &6363661361282238574 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1679424419653922518, guid: ac7ade829e475574497e18bee01fec83, type: 3}
+  m_PrefabInstance: {fileID: 5701213900881389240}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3605737796190676951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6363661361282238574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01910511cdb0a3a4bb1d799cc9f9b5cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CompanionAIController
+  currentState: 0
+  playerTransformAnchor: {fileID: 11400000, guid: 209f3ccd083522b4cab71143cd1b29db, type: 2}
+  stopDistanceBeforePlayer: 2
+  maximumDistanceFromPlayer: 5
+--- !u!114 &-248613338311705522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6363661361282238574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 262e95129aa4e9442a36735813c229b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RecruitableCompanion
+  squadSet: {fileID: 11400000, guid: 986b56c95b54e2b479ee39cbd4770e5c, type: 2}
+  onCompanionRecruitedEvent: {fileID: 11400000, guid: 1fed76b5ec4e1ee44a9ffcd083f3de8b, type: 2}
+--- !u!114 &-6357960968569207405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6363661361282238574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f55055985de9b3248941ab6a482428b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PassiveSkillManager
+  passiveSkills: []
