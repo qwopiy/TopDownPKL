@@ -2,22 +2,19 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-[RequireComponent(typeof(EnemyStatsManager))]
 public class EnemyMovement : MonoBehaviour
 {
     private NavMeshAgent agent;
-    private EnemyStatsManager stats;
+    private UnitStatsManager stats;
 
-    private void Awake()
+    private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        stats = GetComponent<EnemyStatsManager>();
+        stats = GetComponent<UnitStatsManager>();
 
         agent.speed = stats.CurrentMovementSpeed;
-        agent.acceleration = stats.CurrentAcceleration;
         agent.angularSpeed = stats.CurrentRotationSpeed;
-        agent.stoppingDistance = stats.CurrentStoppingDistance;
-        agent.autoBraking = stats.CurrentAutoBraking;
+        agent.stoppingDistance = stats.CurrentAttackRange;
     }
 
     public void MoveTo(Vector3 destination)
