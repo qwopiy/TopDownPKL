@@ -1,18 +1,17 @@
 using UnityEngine;
 
-[RequireComponent(typeof(EnemyMovement))]
-[RequireComponent(typeof(PlayerDetector))]
+
 public class EnemyController : MonoBehaviour
 {
     private EnemyMovement movement;
-    private PlayerDetector detector;
+    private TargetFinder detector;
 
     private Transform tower;
 
     private void Awake()
     {
         movement = GetComponent<EnemyMovement>();
-        detector = GetComponent<PlayerDetector>();
+        detector = GetComponent<TargetFinder>();
 
         GameObject towerObject = GameObject.FindGameObjectWithTag("Tower");
 
@@ -22,9 +21,9 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
-        if (detector.DetectedPlayer != null)
+        if (detector.NearestTarget != null)
         {
-            movement.MoveTo(detector.DetectedPlayer.position);
+            movement.MoveTo(detector.NearestTarget.position);
         }
         else if (tower != null)
         {
