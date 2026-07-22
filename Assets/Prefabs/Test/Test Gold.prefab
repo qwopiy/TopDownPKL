@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6875821430886217779}
   - component: {fileID: 6663678750094498685}
   - component: {fileID: 9025492216087834338}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Test Gold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.07385, y: 0.95, z: 3.0437}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.60972, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: aeebe66c44cc00b439b82cf6668b110c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -125,4 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c22b1c8b6e03c46b33bd8fa98f0e20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectibleItem
+  playerTransformAnchor: {fileID: 11400000, guid: 209f3ccd083522b4cab71143cd1b29db, type: 2}
+  magnetSpeed: 5
   amount: 1
