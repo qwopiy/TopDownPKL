@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3416195660750293140}
   - component: {fileID: 3213712803624335719}
   - component: {fileID: 9203192059751722273}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ananas_Base
   m_TagString: Player
   m_Icon: {fileID: 0}
