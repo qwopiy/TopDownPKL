@@ -2,7 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(UnitStatsManager))]
-public class CompanionAIController : MonoBehaviour
+public class CompanionAIController : MonoBehaviour, IMovementProvider
 {
     public enum CompanionState { Idle, Following }
     [Header("State")]
@@ -21,6 +21,10 @@ public class CompanionAIController : MonoBehaviour
 
     private float currentAttackRange;
     private float currentRotationSpeed;
+
+    public float CurrentSpeed => controller != null ? controller.velocity.magnitude : 0f;
+
+    public bool IsMoving => CurrentSpeed > 0.1f;
 
     private void Start()
     {

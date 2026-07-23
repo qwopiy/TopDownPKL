@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba472003bfe54c044b31a80b532b9d9e, type: 3}
   m_Name: Witch
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDataSO
-  characterName: Bint
+  characterName: Witch
   maxHealth: 80
   movementSpeed: 5
   rotationSpeed: 15

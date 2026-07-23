@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ public class PassiveSkillManager : MonoBehaviour
     [SerializeField] private List<SkillDataSO> passiveSkills = new List<SkillDataSO>();
 
     private Dictionary<string, float> passiveTimers = new Dictionary<string, float>();
+
+    public event Action<int> OnSkillExecuted;
 
     private void Start()
     {
@@ -55,5 +58,9 @@ public class PassiveSkillManager : MonoBehaviour
             passiveSkills.Add(newPassive);
             passiveTimers[newPassive.skillName] = newPassive.cooldown;
         }
+    }
+    public void OnAnimationPlayed(int animHash)
+    {
+        OnSkillExecuted?.Invoke(animHash);
     }
 }

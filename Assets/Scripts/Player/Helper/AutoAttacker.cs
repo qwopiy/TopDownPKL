@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -16,6 +17,8 @@ public class AutoAttacker : MonoBehaviour
     [SerializeField] private float visualFeedbackDuration = 0.1f;
     private Vector3 originalScale;
     private bool isSqueezing = false;
+
+    public event Action<int> OnAttackExecuted;
 
     private void Start()
     {
@@ -43,6 +46,8 @@ public class AutoAttacker : MonoBehaviour
 
             if (Time.time >= nextAttackTime)
             {
+                attackRate = statsManager.CurrentAttackRate;
+
                 Attack(target);
                 nextAttackTime = Time.time + attackRate;
             }
@@ -81,5 +86,10 @@ public class AutoAttacker : MonoBehaviour
 
         transform.localScale = originalScale;
         isSqueezing = false;
+    }
+
+    public void OnAnimationPlayed(int animHash)
+    {
+        OnAttackExecuted?.Invoke(animHash);
     }
 }
