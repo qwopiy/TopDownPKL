@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeDataSO
   upgradeName: Sepatu Lari
   description: buat lari kencang
-  upgradeIcon: {fileID: 0}
+  upgradeIcon: {fileID: 21300000, guid: 7686208f074b4b3409038c26c4985bdf, type: 3}
   modifiers:
   - statType: 1
     modType: 1

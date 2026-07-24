@@ -4,14 +4,16 @@ using UnityEngine.EventSystems;
 
 public class UpgradeUIController : MonoBehaviour
 {
+    public SquadAnchorSO squadAnchor;
     public List<GameObject> upgradeCardsObj;
+    private UpgradeCard selectedUpgrade;
 
-    public void CreateUpgradeCard(UpgradeDataSO upgradeData, int amount) // masih base upgrade, nanti ubah jadi random?
+    public void CreateUpgradeCard(int amount) // masih base upgrade, nanti ubah jadi random?
     {
         for (int i = 0; i < amount; i++)
         {
-            upgradeCardsObj[i].SetActive(true);
-            upgradeCardsObj[i].GetComponent<UpgradeCard>().SetUpgradeData(upgradeData);
+            // TODO: Add logic to select a random upgrade from available upgrades
+            upgradeCardsObj[i].GetComponent<UpgradeCard>().SetUpgradeData();
         }
     }
 
@@ -25,13 +27,27 @@ public class UpgradeUIController : MonoBehaviour
         Debug.Log("Selected Upgrade: " + selectedCard.name);
 
         selectedCard.HighlightCard();
+        selectedUpgrade = selectedCard;
     }
 
-    public void ClearUpgradeCards()
+    public void ConfirmUpgrade()
     {
-        foreach (var card in upgradeCardsObj)
+        if (selectedUpgrade != null)
         {
-            card.SetActive(false);
+            UpgradeDataSO selectedUpgradeData = selectedUpgrade.GetUpgradeData();
+            Debug.Log("Confirmed Upgrade: " + selectedUpgradeData.upgradeName);
+            if (squadAnchor != null)
+            {
+                squadAnchor.ApplyUpgrade(selectedUpgradeData);
+                foreach (var card in upgradeCardsObj)
+                {
+                    card.GetComponent<UpgradeCard>().UnHighlightCard();
+                }
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No upgrade selected to confirm.");
         }
     }
 }
