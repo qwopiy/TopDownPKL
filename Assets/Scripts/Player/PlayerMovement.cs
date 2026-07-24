@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IMovementProvider
 {
     [Header("references")]
     [SerializeField] private InputReader inputReader;
@@ -16,6 +16,9 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 inputVector = Vector2.zero;
     private Vector3 moveDirection = Vector3.zero;
+
+    public float CurrentSpeed => controller != null ? controller.velocity.magnitude : 0f;
+    public bool IsMoving => CurrentSpeed > 0.1f;
 
     void Start()
     {

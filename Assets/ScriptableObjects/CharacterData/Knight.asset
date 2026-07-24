@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba472003bfe54c044b31a80b532b9d9e, type: 3}
-  m_Name: Skeleton
+  m_Name: Knight
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDataSO
-  characterName: Skelleton
-  maxHealth: 20
-  movementSpeed: 8
+  characterName: Knight
+  maxHealth: 125
+  movementSpeed: 5
   rotationSpeed: 15
-  attackDamage: 2
-  attackRange: 2.5
-  attackRate: 0.5
-  attackBehavior: {fileID: 11400000, guid: b874ceb198349cd489992a711b3a08b4, type: 2}
+  attackDamage: 25
+  attackRange: 3
+  attackRate: 3
+  attackBehavior: {fileID: 11400000, guid: 2dad5900bbbe6df498fddd9e62b47d57, type: 2}

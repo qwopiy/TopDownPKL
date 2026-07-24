@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ public class ActiveSkillManager : MonoBehaviour
     [SerializeField] private List<SkillDataSO> equippedSkills = new List<SkillDataSO>();
 
     private Dictionary<string, float> cooldownTimers = new Dictionary<string, float>();
+
+    public event Action<int> OnSkillExecuted;
 
     private void Update()
     {
@@ -49,5 +52,10 @@ public class ActiveSkillManager : MonoBehaviour
         {
             equippedSkills.Add(newSkill);
         }
+    }
+
+    public void OnAnimationPlayed(int animHash)
+    {
+        OnSkillExecuted?.Invoke(animHash);
     }
 }
