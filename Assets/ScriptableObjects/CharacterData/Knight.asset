@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba472003bfe54c044b31a80b532b9d9e, type: 3}
+  m_Name: Knight
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDataSO
+  characterName: Knight
+  maxHealth: 125
+  movementSpeed: 5
+  rotationSpeed: 15
+  attackDamage: 20
+  attackRange: 3
+  attackRate: 3
+  attackBehavior: {fileID: 11400000, guid: 2dad5900bbbe6df498fddd9e62b47d57, type: 2}

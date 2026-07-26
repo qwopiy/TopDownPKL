@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IMovementProvider
 {
     [Header("references")]
     [SerializeField] private InputReader inputReader;
@@ -10,12 +10,17 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float rotationSpeed;
+    [SerializeField] private float gravity = -12;
+    private float velocityY;
 
     private CharacterController controller;
     private Transform cameraTransform;
 
     private Vector2 inputVector = Vector2.zero;
     private Vector3 moveDirection = Vector3.zero;
+
+    public float CurrentSpeed => controller != null ? controller.velocity.magnitude : 0f;
+    public bool IsMoving => CurrentSpeed > 0.1f;
 
     void Start()
     {
@@ -37,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
         moveSpeed = unitStatsManager.CurrentMovementSpeed;
         rotationSpeed = unitStatsManager.CurrentRotationSpeed;
 
+        velocityY += Time.deltaTime * gravity;
+
         Vector3 forward = cameraTransform.forward;
         Vector3 right = cameraTransform.right;
 
@@ -48,7 +55,14 @@ public class PlayerMovement : MonoBehaviour
 
         moveDirection = (right * inputVector.x) + (forward * inputVector.y);
 
-        controller.Move(moveDirection * moveSpeed * Time.deltaTime);
+        Vector3 velocity = moveDirection * moveSpeed + Vector3.up * velocityY;
+
+        controller.Move(velocity * Time.deltaTime);
+
+        if (controller.isGrounded)
+        {
+            velocityY = 0;
+        }
 
         if (moveDirection.magnitude > 0.1f)
         {
