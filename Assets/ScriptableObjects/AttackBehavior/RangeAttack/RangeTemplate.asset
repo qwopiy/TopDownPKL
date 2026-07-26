@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4d28bd9611bbb14ab26c87416ed6ca2, type: 3}
   m_Name: RangeTemplate
   m_EditorClassIdentifier: Assembly-CSharp::RangeAttackSO
-  projectilePrefabPlaceholder: {fileID: 0}
+  projectilePrefabPlaceholder: {fileID: 3581788238649449639, guid: c402110e2900daf47b853acb6e49d4a9, type: 3}
   projectileSpeed: 15
+  animationName: Shoot

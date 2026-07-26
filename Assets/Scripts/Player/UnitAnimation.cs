@@ -98,7 +98,7 @@ public class UnitAnimation : MonoBehaviour
     {
         if (currentStateHash == newState) return;
 
-        animator.CrossFade(newState, 0.1f, layer: 0, 0f);   
+        animator.CrossFade(newState, 0.2f, layer: 0, 0f);   
         currentStateHash = newState;
     }
 
