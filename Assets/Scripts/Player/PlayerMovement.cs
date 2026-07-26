@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour, IMovementProvider
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float rotationSpeed;
+    [SerializeField] private float gravity = -12;
+    private float velocityY;
 
     private CharacterController controller;
     private Transform cameraTransform;
@@ -40,6 +42,8 @@ public class PlayerMovement : MonoBehaviour, IMovementProvider
         moveSpeed = unitStatsManager.CurrentMovementSpeed;
         rotationSpeed = unitStatsManager.CurrentRotationSpeed;
 
+        velocityY += Time.deltaTime * gravity;
+
         Vector3 forward = cameraTransform.forward;
         Vector3 right = cameraTransform.right;
 
@@ -51,7 +55,14 @@ public class PlayerMovement : MonoBehaviour, IMovementProvider
 
         moveDirection = (right * inputVector.x) + (forward * inputVector.y);
 
-        controller.Move(moveDirection * moveSpeed * Time.deltaTime);
+        Vector3 velocity = moveDirection * moveSpeed + Vector3.up * velocityY;
+
+        controller.Move(velocity * Time.deltaTime);
+
+        if (controller.isGrounded)
+        {
+            velocityY = 0;
+        }
 
         if (moveDirection.magnitude > 0.1f)
         {
