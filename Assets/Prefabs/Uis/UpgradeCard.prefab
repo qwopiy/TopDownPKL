@@ -86,10 +86,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9682342c38197e54a93662207b07c8c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeCard
+  upgradeType: 0
   upgradeData: {fileID: 0}
-  upgradeNameText: {fileID: 1855251800771352559}
-  upgradeImage: {fileID: 0}
-  upgradeDescriptionText: {fileID: 9060049828910558684}
+  cardName: {fileID: 1855251800771352559}
+  cardImage: {fileID: 901223988477624274}
+  cardDescription: {fileID: 9060049828910558684}
+  cardPrice: {fileID: 9060049828910558684}
   cardHighlighter: {fileID: 6897602683919915903}
   animator: {fileID: 156055543818962831}
 --- !u!95 &156055543818962831
@@ -204,7 +206,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3314656242084785979}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000023932133}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -212,7 +214,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 19.1}
+  m_AnchoredPosition: {x: 0.000009790418, y: 11.500002}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8713660283321240717
@@ -279,7 +281,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4019080435789680363}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -287,7 +289,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 82.3}
+  m_AnchoredPosition: {x: -0, y: 74.7}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7797264170605213960
@@ -416,7 +418,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4694657114961270728}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000023932133}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -425,8 +427,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -56.1}
-  m_SizeDelta: {x: 150, y: 37}
+  m_AnchoredPosition: {x: 0.000009790418, y: -63.699997}
+  m_SizeDelta: {x: 87.37, y: 37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5612717031983273604
 CanvasRenderer:
@@ -531,7 +533,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Effects
+  m_text: 'Price
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d08f9a813101b174abfad427c2170962, type: 2}
   m_sharedMaterial: {fileID: -6706220318277588726, guid: d08f9a813101b174abfad427c2170962, type: 2}
@@ -565,7 +569,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0

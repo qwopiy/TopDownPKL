@@ -7,7 +7,6 @@ public class PlayerUpgradeManager : MonoBehaviour
 
     public int currentCoinCount = 0;
     public int currentUpgradeCount = 0;
-    public int baseUpgradeCost = 10; // Base cost for the first upgrade
 
     private void Awake()
     {
@@ -32,31 +31,14 @@ public class PlayerUpgradeManager : MonoBehaviour
     public void AddCoins(int amount)
     {
         currentCoinCount += amount;
+    }
 
-        if (IsUpgradable())
+    public void PurchaseUpgrade(int amount)
+    {
+        if (currentCoinCount >= amount)
         {
-            TriggerUpgrade();
+            currentCoinCount -= amount;
+            currentUpgradeCount++;
         }
-    }
-
-    public void TriggerUpgrade()
-    {
-        currentCoinCount -= GetUpgradeCost();
-
-        // tampilin layar upgrade + event upgrade
-        Debug.Log("Upgrade triggered! Current upgrade count: " + currentUpgradeCount);
-
-        currentUpgradeCount++;
-    }
-
-    public bool IsUpgradable()
-    {
-        // Check if the player has enough coins to upgrade
-        return currentCoinCount >= GetUpgradeCost();
-    }
-
-    private int GetUpgradeCost()
-    {
-        return baseUpgradeCost + (currentUpgradeCount * 2);
     }
 }
