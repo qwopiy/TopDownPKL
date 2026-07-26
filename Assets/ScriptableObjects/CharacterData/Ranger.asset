@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba472003bfe54c044b31a80b532b9d9e, type: 3}
-  m_Name: Knight
+  m_Name: Ranger
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDataSO
-  characterName: Knight
-  maxHealth: 125
+  characterName: Ranger
+  maxHealth: 85
   movementSpeed: 5
   rotationSpeed: 15
-  attackDamage: 20
-  attackRange: 3
-  attackRate: 3
-  attackBehavior: {fileID: 11400000, guid: 2dad5900bbbe6df498fddd9e62b47d57, type: 2}
+  attackDamage: 10
+  attackRange: 6
+  attackRate: 1
+  attackBehavior: {fileID: 11400000, guid: 4db1602db9f8b134f80296dbfddc10d6, type: 2}

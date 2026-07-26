@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "SpeedUp", menuName = "ScriptableObjects/Skills/Speed Up")]
-public class SpeedUpSO : SkillDataSO
+public class TemporaryBuffSO : SkillDataSO
 {
     public SquadAnchorSO squadAnchor;
     public UpgradeDataSO upgradeData;
