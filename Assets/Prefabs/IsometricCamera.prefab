@@ -151,5 +151,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IsometricCameraMovement
   playerTransformAnchor: {fileID: 11400000, guid: 209f3ccd083522b4cab71143cd1b29db, type: 2}
-  offset: {x: -10, y: 10, z: -10}
+  offset: {x: -1, y: 10, z: -1.5}
   smoothTime: 0.2

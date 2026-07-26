@@ -711,7 +711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSelectManager
   characterSelectAnchor: {fileID: 11400000, guid: 7dc309f0eb8dd9e4ea416f2db4ae77c4, type: 2}
-  characterSelectGameObject: {fileID: 6462626486291911510, guid: ebc9f5f6eec18464088b6ef6dfe0601a, type: 3}
+  characterSelectGameObject: {fileID: 5814448074871247463, guid: 0658fa5369926ae498525a7084224fe8, type: 3}
 --- !u!114 &507063739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -797,7 +797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cbbe252c6ffbed4aaf01b6f024c75ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuController
-  gameSceneName: TestPlayScene
+  gameSceneName: Map
 --- !u!4 &733292073
 Transform:
   m_ObjectHideFlags: 0
@@ -907,7 +907,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ananas
+  m_text: Knight
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1620,7 +1620,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bint
+  m_text: Ranger
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2138,7 +2138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSelectManager
   characterSelectAnchor: {fileID: 11400000, guid: 7dc309f0eb8dd9e4ea416f2db4ae77c4, type: 2}
-  characterSelectGameObject: {fileID: 3508551106539830060, guid: eef8e08530ecda94e8ed81ffbf064a70, type: 3}
+  characterSelectGameObject: {fileID: 2510527624542210774, guid: ca4ce30c0e044674fa019d1619dca5d2, type: 3}
 --- !u!114 &1634558454
 MonoBehaviour:
   m_ObjectHideFlags: 0
