@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewEnemyData", menuName = "ScriptableObjects/Enemy Data")]
-public class EnemyDataSO : ScriptableObject
+public class EnemyDataSO : CharacterDataSO
 {
     [Header("Base Info")]
     public string enemyName;

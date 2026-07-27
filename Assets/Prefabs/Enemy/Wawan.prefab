@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4302d0ed936573045bedc2ca8f2658f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetFinder
-  detectionRadius: 5
+  detectionRadius: 10
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
