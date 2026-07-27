@@ -45,7 +45,7 @@ public class GameUIController : MonoBehaviour
     }
 
     // Upgrades Panel
-    public void UpgradeOpen()
+    public void ShopOpen()
     {
         upgradePanel.SetActive(true);
     }
