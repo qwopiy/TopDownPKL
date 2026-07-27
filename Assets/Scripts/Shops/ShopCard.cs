@@ -45,14 +45,13 @@ public class ShopCard : MonoBehaviour
 
     public void SetRandomUpgrade()
     {
-        UpgradeRandomizer upgradeRandomizer = new();
-        upgradeData = upgradeRandomizer.GetRandomUpgrade();
+        Debug.Log(UpgradeRandomizerManager.Instance.gameObject.name);
+        upgradeData = UpgradeRandomizerManager.Instance.GetRandomUpgrade();
     }
 
     public void SetRandomCompanion()
     {
-        UpgradeRandomizer upgradeRandomizer = new();
-        upgradeData = upgradeRandomizer.GetRandomCompanion();
+        upgradeData = UpgradeRandomizerManager.Instance.GetRandomCompanion();
     }
 
     public UpgradeDataSO GetUpgradeData()

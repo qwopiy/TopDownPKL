@@ -24,6 +24,8 @@ public class ShopController : MonoBehaviour
                 }
             }
         }
+
+        ResetShop();
     }
 
     public void SelectUpgrade(ShopCard selectedCard)
