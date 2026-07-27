@@ -84,7 +84,7 @@ public class UpgradeRandomizerManager : MonoBehaviour
 
             newUpgradeSO.modifiers.Add(newMod);
         }
-        newUpgradeSO.description = originalUpgradeSO.description + $" {originalUpgradeSO.modifiers[0].value} {originalUpgradeSO.modifiers[0].modType} (Increased by {upgradeModifier})";
+        newUpgradeSO.description = originalUpgradeSO.description + $" {originalUpgradeSO.modifiers[0].value + upgradeModifier} {originalUpgradeSO.modifiers[0].modType}";
 
         return newUpgradeSO;
     }

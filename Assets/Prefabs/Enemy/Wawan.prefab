@@ -156,6 +156,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UnitStatsManager
   characterData: {fileID: 11400000, guid: 2197a393b5b0b3b489856c6e387c46f5, type: 2}
   unitDied: {fileID: 0}
+  currentHealth: 0
+  currentMovementSpeed: 0
+  currentAttackDamage: 0
+  currentRotationSpeed: 0
+  currentAttackRate: 0
+  currentAttackRange: 0
 --- !u!114 &2339590638204090866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,7 +177,7 @@ MonoBehaviour:
   detectionRadius: 10
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 640
   scanInterval: 0.2
 --- !u!114 &2752657104940140167
 MonoBehaviour:
