@@ -13,7 +13,7 @@ public class ShopTrigger : MonoBehaviour
     }
     public void ShopOpening(bool WaveRunning)
     {
-        gameObject.SetActive(WaveRunning);
+        gameObject.SetActive(!WaveRunning);
     }
     public void OnTriggerEnter(Collider other)
     {
