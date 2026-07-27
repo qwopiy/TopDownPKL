@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -18,6 +19,7 @@ public class WaveManager : MonoBehaviour
     private bool waveRunning = false;
 
     public int CurrentWave => currentWave;
+    public event Action <bool> WaveRunning;
     public WaveDifficulty CurrentDifficulty { get; private set; }
 
     private void Awake()
@@ -39,6 +41,7 @@ public class WaveManager : MonoBehaviour
 
         currentWave++;
         waveRunning = true;
+        WaveRunning?.Invoke(waveRunning);
 
         CurrentDifficulty = WaveDifficultyCalculator.GetDifficulty(currentWave);
 
