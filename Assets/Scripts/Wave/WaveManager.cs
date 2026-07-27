@@ -1,0 +1,70 @@
+using System.Collections;
+using UnityEngine;
+
+public class WaveManager : MonoBehaviour
+{
+    public static WaveManager Instance;
+
+    [Header("References")]
+    [SerializeField] private EnemySpawner enemySpawner;
+
+    [Header("Wave Settings")]
+    [SerializeField] private float timeBetweenWaves = 5f;
+    [SerializeField] private int baseEnemyCount = 10;
+    [SerializeField] private int enemyIncreasePerWave = 3;
+
+    private int currentWave = 0;
+    private int enemiesAlive = 0;
+    private bool waveRunning = false;
+
+    public int CurrentWave => currentWave;
+    public WaveDifficulty CurrentDifficulty { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
+
+    private void Start()
+    {
+        StartCoroutine(StartNextWave());
+    }
+
+    private IEnumerator StartNextWave()
+    {
+        yield return new WaitForSeconds(timeBetweenWaves);
+
+        currentWave++;
+        waveRunning = true;
+
+        CurrentDifficulty = WaveDifficultyCalculator.GetDifficulty(currentWave);
+
+        int enemyCount = baseEnemyCount + ((currentWave - 1) * enemyIncreasePerWave);
+
+        Debug.Log($"Wave {currentWave} Started");
+
+        enemySpawner.SpawnWave(enemyCount, CurrentDifficulty);
+    }
+
+    public void EnemySpawned()
+    {
+        enemiesAlive++;
+    }
+
+    public void EnemyDied()
+    {
+        enemiesAlive--;
+
+        if (waveRunning && enemiesAlive <= 0)
+        {
+            waveRunning = false;
+
+            Debug.Log($"Wave {currentWave} Completed");
+
+            StartCoroutine(StartNextWave());
+        }
+    }
+}
