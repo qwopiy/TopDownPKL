@@ -18,9 +18,9 @@ GameObject:
   - component: {fileID: 7425606544211416403}
   - component: {fileID: 3437378491772269580}
   - component: {fileID: 2567535746561986189}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Warior
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
