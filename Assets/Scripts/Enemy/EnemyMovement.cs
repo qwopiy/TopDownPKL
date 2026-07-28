@@ -26,4 +26,11 @@ public class EnemyMovement : MonoBehaviour
     {
         agent.ResetPath();
     }
+    public bool HasReachedDestination()
+    {
+        if (agent.pathPending)
+            return false;
+
+        return agent.remainingDistance <= agent.stoppingDistance;
+    }
 }
