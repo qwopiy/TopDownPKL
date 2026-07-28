@@ -51,6 +51,8 @@ public class PatrolController : MonoBehaviour
 
         currentState = State.Patrol;
 
+        Debug.Log(patrolRoute + " " + currentWaypoint);
+        Debug.Log(patrolRoute.Waypoints[currentWaypoint].position);
         MoveToCurrentWaypoint();
     }
 

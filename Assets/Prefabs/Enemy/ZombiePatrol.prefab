@@ -569,6 +569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1650f4c9de7253459583646f13a239f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
+  agent: {fileID: 6287348789128686550}
 --- !u!195 &6287348789128686550
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -604,6 +605,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatrolController
   waypointReachDistance: 0.3
+  patrolRoute: {fileID: 0}
+  currentState: 0
 --- !u!136 &849091151155805830
 CapsuleCollider:
   m_ObjectHideFlags: 0
