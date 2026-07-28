@@ -23,7 +23,7 @@ public class RangeAttackSO : AttackBehaviorSO
         Vector3 direction = (target.position - attacker.transform.position).normalized;
         direction.y = 0f;
 
-        GameObject bulletGO = Instantiate(projectilePrefabPlaceholder, new Vector3 (attacker.transform.position.x, 1, attacker.transform.position.z), attacker.transform.rotation);
+        GameObject bulletGO = Instantiate(projectilePrefabPlaceholder, new Vector3 (attacker.transform.position.x, attacker.transform.position.y, attacker.transform.position.z), attacker.transform.rotation);
         BulletController bulletController = bulletGO.GetComponent<BulletController>();
         if (bulletController != null) { 
             bulletController.AddBulletData(damage, projectileSpeed, direction);
