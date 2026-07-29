@@ -16,6 +16,8 @@ public class PatrolController : MonoBehaviour
     public PatrolRoute patrolRoute;
     private EnemyMovement movement;
     private TargetFinder targetFinder;
+    private PatrolSpawner spawner;
+    public PatrolSpawner Spawner => spawner;
 
     private int currentWaypoint;
     public State currentState;
@@ -43,16 +45,15 @@ public class PatrolController : MonoBehaviour
         }
     }
 
-    public void Initialize(PatrolRoute route, int startWaypoint)
+    public void Initialize(PatrolRoute route, int startWaypoint, PatrolSpawner patrolSpawner)
     {
         patrolRoute = route;
+        spawner = patrolSpawner;
 
         currentWaypoint = Mathf.Clamp(startWaypoint, 0, patrolRoute.Waypoints.Length - 1);
 
         currentState = State.Patrol;
 
-        Debug.Log(patrolRoute + " " + currentWaypoint);
-        Debug.Log(patrolRoute.Waypoints[currentWaypoint].position);
         MoveToCurrentWaypoint();
     }
 
@@ -66,7 +67,7 @@ public class PatrolController : MonoBehaviour
 
         Transform waypoint = patrolRoute.Waypoints[currentWaypoint];
 
-        if (Vector3.Distance(transform.position, waypoint.position) <= waypointReachDistance)
+        if (movement.HasReachedDestination())
         {
             currentWaypoint++;
 

@@ -110,6 +110,15 @@ public class UnitStatsManager : MonoBehaviour
 
     private void Die()
     {
+
+        PatrolController patrol = GetComponent<PatrolController>();
+
+        if (patrol != null)
+        {
+            patrol.Spawner.NotifyEnemyDead(gameObject);
+        }
+
+
         Debug.Log($"{gameObject.name} telah dikalahkan!");
         unitDied?.Raise();
         gameObject.SetActive(false); 
