@@ -7,6 +7,7 @@ public class PatrolController : MonoBehaviour
     public enum State
     {
         Patrol,
+        Wait,
         Chase
     }
 
@@ -21,6 +22,11 @@ public class PatrolController : MonoBehaviour
 
     private int currentWaypoint;
     public State currentState;
+
+    [Header("Idle Settings")]
+    [SerializeField] private float minIdleTime = 5f;
+    [SerializeField] private float maxIdleTime = 10f;
+    private float idleTimer;
 
     private void Awake()
     {
@@ -37,6 +43,10 @@ public class PatrolController : MonoBehaviour
         {
             case State.Patrol:
                 UpdatePatrol();
+                break;
+
+            case State.Wait:
+                UpdateWait();
                 break;
 
             case State.Chase:
@@ -69,12 +79,11 @@ public class PatrolController : MonoBehaviour
 
         if (movement.HasReachedDestination())
         {
-            currentWaypoint++;
+            currentState = State.Wait;
 
-            if (currentWaypoint >= patrolRoute.Waypoints.Length)
-                currentWaypoint = 0;
+            idleTimer = Random.Range(minIdleTime, maxIdleTime);
 
-            MoveToCurrentWaypoint();
+            movement.Stop();
         }
     }
 
@@ -93,5 +102,28 @@ public class PatrolController : MonoBehaviour
     private void MoveToCurrentWaypoint()
     {
         movement.MoveTo(patrolRoute.Waypoints[currentWaypoint].position);
+    }
+
+    private void UpdateWait()
+    {
+        if (targetFinder.NearestTarget != null)
+        {
+            currentState = State.Chase;
+            return;
+        }
+
+        idleTimer -= Time.deltaTime;
+
+        if (idleTimer <= 0f)
+        {
+            currentWaypoint++;
+
+            if (currentWaypoint >= patrolRoute.Waypoints.Length)
+                currentWaypoint = 0;
+
+            currentState = State.Patrol;
+
+            MoveToCurrentWaypoint();
+        }
     }
 }
