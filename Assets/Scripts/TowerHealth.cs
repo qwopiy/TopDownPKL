@@ -1,16 +1,15 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TowerHealth : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Slider healthBar;
 
-    // Update is called once per frame
-    void Update()
+    private UnitStatsManager Stats => GetComponent<UnitStatsManager>();
+
+    private void Update()
     {
-        
+        healthBar.maxValue = Stats.CharacterData.maxHealth;
+        healthBar.value = Stats.currentHealth;
     }
 }

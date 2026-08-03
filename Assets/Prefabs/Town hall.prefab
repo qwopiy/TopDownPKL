@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2158884487842471732}
   - component: {fileID: 3051819410457923729}
   - component: {fileID: 990452015600264283}
-  - component: {fileID: 8841408798599852047}
   - component: {fileID: 1918197127797968111}
-  m_Layer: 0
+  - component: {fileID: 6799139083559103216}
+  m_Layer: 9
   m_Name: Town hall
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -95,8 +95,28 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8841408798599852047
-MeshCollider:
+--- !u!114 &1918197127797968111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638807428822975886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4164ac2422bcc364abfffed824d4b482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitStatsManager
+  characterData: {fileID: 11400000, guid: cc6d0155b23cac44ebab3ee1785aba3e, type: 2}
+  unitDied: {fileID: 0}
+  currentHealth: 0
+  currentMovementSpeed: 0
+  currentAttackDamage: 0
+  currentRotationSpeed: 0
+  currentAttackRate: 0
+  currentAttackRange: 0
+--- !u!65 &6799139083559103216
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -113,24 +133,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -152077652270060891, guid: 54ed6ccf092c43e408c991a5a90d5aa6, type: 3}
---- !u!114 &1918197127797968111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1638807428822975886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4164ac2422bcc364abfffed824d4b482, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UnitStatsManager
-  characterData: {fileID: 11400000, guid: cc6d0155b23cac44ebab3ee1785aba3e, type: 2}
-  unitDied: {fileID: 0}
+  serializedVersion: 3
+  m_Size: {x: 4.7249465, y: 6.292183, z: 5.071815}
+  m_Center: {x: 0, y: 3.0878549, z: 0}
 --- !u!1 &5397593854874423352
 GameObject:
   m_ObjectHideFlags: 0

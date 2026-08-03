@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -9,15 +10,18 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private EnemySpawner enemySpawner;
 
     [Header("Wave Settings")]
-    [SerializeField] private float timeBetweenWaves = 5f;
+    [SerializeField] private float timeBetweenWaves = 10f;
     [SerializeField] private int baseEnemyCount = 10;
     [SerializeField] private int enemyIncreasePerWave = 3;
+    [SerializeField] private float preparationTime = 30f;
+
 
     private int currentWave = 0;
     private int enemiesAlive = 0;
     private bool waveRunning = false;
 
     public int CurrentWave => currentWave;
+    public event Action <bool> WaveRunning;
     public WaveDifficulty CurrentDifficulty { get; private set; }
 
     private void Awake()
@@ -30,6 +34,14 @@ public class WaveManager : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(GameStartRoutine());
+    }
+    private IEnumerator GameStartRoutine()
+    {
+        Debug.Log("Preparation Started");
+
+        yield return new WaitForSeconds(preparationTime);
+
         StartCoroutine(StartNextWave());
     }
 
@@ -39,6 +51,7 @@ public class WaveManager : MonoBehaviour
 
         currentWave++;
         waveRunning = true;
+        WaveRunning?.Invoke(waveRunning);
 
         CurrentDifficulty = WaveDifficultyCalculator.GetDifficulty(currentWave);
 
