@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(UnitStatsManager))]
@@ -15,6 +16,8 @@ public class CompanionAIController : MonoBehaviour, IMovementProvider
     [Header("Movement Tuning")]
     [SerializeField] private float stopDistanceBeforePlayer = 2f; // Jarak aman dari Player
     [SerializeField] private float maximumDistanceFromPlayer = 5f; // Jarak maksimum dari Player sebelum kembali mengikuti
+    [SerializeField] private float gravity = -12;
+    private float velocityY;
 
     private CharacterController controller;
     private UnitStatsManager statsManager;
@@ -92,7 +95,14 @@ public class CompanionAIController : MonoBehaviour, IMovementProvider
             direction = Vector3.zero;
         }
 
-        controller.Move(direction * speed * Time.deltaTime);
+        Vector3 velocity = direction * speed + Vector3.up * velocityY;
+
+        controller.Move(velocity * Time.deltaTime);
+
+        if (controller.isGrounded)
+        {
+            velocityY = 0;
+        }
     }
 
     public void Recruit()
