@@ -5,9 +5,9 @@ public class RecruitableCompanion : MonoBehaviour
 {
     [Header("SO Assets")]
     [SerializeField] private SquadAnchorSO squadSet;
-    [SerializeField] private GameEventSO onCompanionRecruitedEvent; 
+    [SerializeField] private GameEventSO onCompanionRecruitedEvent;
 
-    private CompanionAIController aiController;
+    [SerializeField] private CompanionAIController aiController;
     private bool isRecruited = false;
 
     private void Start()
@@ -25,7 +25,7 @@ public class RecruitableCompanion : MonoBehaviour
         }
     }
 
-    private void AddToSquad()
+    public void AddToSquad()
     {
         isRecruited = true;
 

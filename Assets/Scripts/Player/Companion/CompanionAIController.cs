@@ -54,19 +54,21 @@ public class CompanionAIController : MonoBehaviour, IMovementProvider
 
         float distanceToPlayer = Vector3.Distance(transform.position, playerTransformAnchor.value.position);
 
-        if (playerTargetFinder.NearestTarget != null)
-        {
-            targetToFollow = playerTargetFinder.NearestTarget;
-            targetStopDistance = currentAttackRange - 0.5f;
-        }
-        else if (distanceToPlayer > maximumDistanceFromPlayer)
+        //Target Prioritization: 1. Player, 2. Nearest Target, 3. Player's Target
+        if (distanceToPlayer > maximumDistanceFromPlayer)
         {
             targetToFollow = playerTransformAnchor.value;
             targetStopDistance = stopDistanceBeforePlayer;
         }
-        else if (targetFinder != null && targetFinder.NearestTarget != null )
+        else if (targetFinder != null && targetFinder.NearestTarget != null)
         {
             targetToFollow = targetFinder.NearestTarget;
+            targetStopDistance = currentAttackRange - 0.5f;
+        }
+        
+        else if (playerTargetFinder.NearestTarget != null)
+        {
+            targetToFollow = playerTargetFinder.NearestTarget;
             targetStopDistance = currentAttackRange - 0.5f;
         }
         else 
@@ -77,9 +79,18 @@ public class CompanionAIController : MonoBehaviour, IMovementProvider
 
         if (targetToFollow == null) return;
 
-        Vector3 direction = targetToFollow.position - transform.position;
-        float speed = statsManager.CurrentMovementSpeed;
+        //Speed Adjustment: If the companion is too far from the player, it will move faster to catch up.
+        float speed;
+        if (distanceToPlayer > maximumDistanceFromPlayer)
+        {
+            speed = statsManager.CurrentMovementSpeed * 1.5f;
+        }
+        else
+        {
+            speed = statsManager.CurrentMovementSpeed;
+        }
 
+        Vector3 direction = targetToFollow.position - transform.position;
         direction.y = 0f; 
         float distance = direction.magnitude;
 
