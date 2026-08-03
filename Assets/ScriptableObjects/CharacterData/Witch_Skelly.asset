@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba472003bfe54c044b31a80b532b9d9e, type: 3}
-  m_Name: Witch
+  m_Name: Witch_Skelly
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDataSO
-  characterName: Witch
-  maxHealth: 80
-  movementSpeed: 5
+  characterName: Skelleton
+  maxHealth: 10
+  movementSpeed: 4
   rotationSpeed: 15
-  attackDamage: 0
-  attackRange: 5
-  attackRate: 2
-  attackBehavior: {fileID: 11400000, guid: 89489977fcd82ee438d34efa6dbeb768, type: 2}
+  attackDamage: 2
+  attackRange: 2.5
+  attackRate: 0.5
+  attackBehavior: {fileID: 11400000, guid: b874ceb198349cd489992a711b3a08b4, type: 2}

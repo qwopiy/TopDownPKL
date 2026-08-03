@@ -10,7 +10,7 @@ public class AutoAttacker : MonoBehaviour
     private UnitStatsManager statsManager;
 
     private float attackRange;
-    private float attackRate;
+    [SerializeField] private float attackRate;
     private float nextAttackTime;
 
     private Transform target;
@@ -75,7 +75,7 @@ public class AutoAttacker : MonoBehaviour
         {
             behavior.ExecuteAttack(gameObject, target, statsManager.CurrentAttackDamage);
 
-            //if (!isSqueezing) StartCoroutine(AttackVisualFeedbackRoutine());
+            if (!isSqueezing) StartCoroutine(AttackVisualFeedbackRoutine());
         }
     }
 
