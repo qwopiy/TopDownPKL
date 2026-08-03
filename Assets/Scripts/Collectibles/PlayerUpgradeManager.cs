@@ -1,9 +1,9 @@
-﻿using JetBrains.Annotations;
-using System.Collections;
+﻿using System;
 using UnityEngine;
 public class PlayerUpgradeManager : MonoBehaviour
 {
     public static PlayerUpgradeManager Instance;
+    public event Action<int> CoinCollected;
 
     public int currentCoinCount = 0;
     public int currentUpgradeCount = 0;
@@ -26,19 +26,29 @@ public class PlayerUpgradeManager : MonoBehaviour
     {
         currentCoinCount = 0;
         currentUpgradeCount = 0;
+        CoinCollected?.Invoke(currentCoinCount);
     }
 
     public void AddCoins(int amount)
     {
         currentCoinCount += amount;
+        CoinCollected?.Invoke(currentCoinCount);
     }
 
-    public void PurchaseUpgrade(int amount)
+    public bool TryPurchaseUpgrade(int amount)
     {
         if (currentCoinCount >= amount)
         {
-            currentCoinCount -= amount;
-            currentUpgradeCount++;
+            PurchaseUpgrade(amount);
+            return true;
         }
+        return false;
+    }
+
+    public void PurchaseUpgrade(int amount) 
+    {
+        currentCoinCount -= amount;
+        currentUpgradeCount++;
+        CoinCollected?.Invoke(currentCoinCount);
     }
 }
