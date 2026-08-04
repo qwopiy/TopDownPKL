@@ -20,8 +20,12 @@ public class WaveManager : MonoBehaviour
     private int enemiesAlive = 0;
     private bool waveRunning = false;
 
+    public int EnemiesAlive => enemiesAlive;
     public int CurrentWave => currentWave;
     public event Action <bool> WaveRunning;
+    public event Action <int> WaveStarted;
+    public event Action <int> WaitUntilNextWave;
+    public event Action AnEnemyDied;
     public WaveDifficulty CurrentDifficulty { get; private set; }
 
     private void Awake()
@@ -35,7 +39,16 @@ public class WaveManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(GameStartRoutine());
+        InitializeInfo();
     }
+
+    private void InitializeInfo()
+    {
+        WaveStarted?.Invoke(currentWave);
+        WaveRunning?.Invoke(waveRunning);
+        WaitUntilNextWave?.Invoke((int)timeBetweenWaves + (int)preparationTime);
+    }
+
     private IEnumerator GameStartRoutine()
     {
         Debug.Log("Preparation Started");
@@ -51,6 +64,7 @@ public class WaveManager : MonoBehaviour
 
         currentWave++;
         waveRunning = true;
+        WaveStarted?.Invoke(currentWave);
         WaveRunning?.Invoke(waveRunning);
 
         CurrentDifficulty = WaveDifficultyCalculator.GetDifficulty(currentWave);
@@ -71,11 +85,15 @@ public class WaveManager : MonoBehaviour
     {
         enemiesAlive--;
 
+        AnEnemyDied?.Invoke();
+
         if (waveRunning && enemiesAlive <= 0)
         {
             waveRunning = false;
 
             Debug.Log($"Wave {currentWave} Completed");
+
+            WaitUntilNextWave?.Invoke((int)timeBetweenWaves);
 
             StartCoroutine(StartNextWave());
         }
