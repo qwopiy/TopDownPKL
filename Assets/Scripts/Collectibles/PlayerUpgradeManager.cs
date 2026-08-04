@@ -51,4 +51,10 @@ public class PlayerUpgradeManager : MonoBehaviour
         currentUpgradeCount++;
         CoinCollected?.Invoke(currentCoinCount);
     }
+
+    public void D_IncreaseCoin()
+    {
+        currentCoinCount += 100;
+        CoinCollected?.Invoke(currentCoinCount);
+    }
 }

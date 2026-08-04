@@ -18,3 +18,4 @@ MonoBehaviour:
   upgradePrice: 69
   modifiers: []
   companionPrefab: {fileID: 7600590003982322686, guid: 316929339e1a94d48bb9ea0e0682b742, type: 3}
+  spawnCoordinates: {x: -5, y: -6.82, z: -12.67}

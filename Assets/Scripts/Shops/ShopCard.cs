@@ -64,7 +64,7 @@ public class ShopCard : MonoBehaviour
         if (upgradeType == UpgradeType.Companion && upgradeData is CompanionDataSO companionData)
         {
             // Handle companion upgrade
-            GameObject newCompanion = Instantiate(companionData.companionPrefab);
+            companionData.SpawnCompanion();
             // You can add additional logic here to manage the companion instance if needed
         }
         else
