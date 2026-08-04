@@ -376,6 +376,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: ade85de830e243143b56b403611ad348, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 58669d960f6bfdf4cbc11dc8b4ec7297, type: 2}
     - target: {fileID: 5973364477558852964, guid: ade85de830e243143b56b403611ad348, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -521,6 +525,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ade85de830e243143b56b403611ad348, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8589990242308799300}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ade85de830e243143b56b403611ad348, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6222377060770508384}
   m_SourcePrefab: {fileID: 100100000, guid: ade85de830e243143b56b403611ad348, type: 3}
 --- !u!1 &347932689523489096 stripped
 GameObject:
@@ -666,3 +673,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResourceDropper
   resourcePrefab: {fileID: 2036437468204183001, guid: 37d65b0647989c64bba4a75e2f28e6a1, type: 3}
+--- !u!114 &-6222377060770508384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347932689523489096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23eefb22036d96341a8d2c6393d914fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitAnimation
+  isAttacking: 0
+  isInAbility: 0
