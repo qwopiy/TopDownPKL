@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9d7bb030e446ed46a6d0a4e0ce58911, type: 3}
+  m_Name: Witch
+  m_EditorClassIdentifier: Assembly-CSharp::SummonAttackSO
+  summonGO: {fileID: 7546064574529170796, guid: 9bf94228221318c4580e662c811a1512, type: 3}
+  animationName: Summon

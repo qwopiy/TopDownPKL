@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7428408175581330902, guid: 39155db9dfb28c94d945dea95b145a03, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.7049375
+      value: -3.95205
       objectReference: {fileID: 0}
     - target: {fileID: 7428408175581330902, guid: 39155db9dfb28c94d945dea95b145a03, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7970008
+      value: 0.79699975
       objectReference: {fileID: 0}
     - target: {fileID: 7428408175581330902, guid: 39155db9dfb28c94d945dea95b145a03, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.62368155
+      value: 1.7834834
       objectReference: {fileID: 0}
     - target: {fileID: 7428408175581330902, guid: 39155db9dfb28c94d945dea95b145a03, type: 3}
       propertyPath: m_LocalRotation.w
@@ -96,7 +96,7 @@ MonoBehaviour:
   currentState: 0
   playerTransformAnchor: {fileID: 11400000, guid: 209f3ccd083522b4cab71143cd1b29db, type: 2}
   stopDistanceBeforePlayer: 3
-  maximumDistanceFromPlayer: 5
+  maximumDistanceFromPlayer: 3
   gravity: -12
 --- !u!114 &-3737987988273858487
 MonoBehaviour:

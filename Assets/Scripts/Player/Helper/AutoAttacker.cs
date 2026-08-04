@@ -10,8 +10,10 @@ public class AutoAttacker : MonoBehaviour
     private UnitStatsManager statsManager;
 
     private float attackRange;
-    private float attackRate;
+    [SerializeField] private float attackRate;
     private float nextAttackTime;
+
+    private Transform target;
 
     [Header("Visual Feedback Placeholder (Graybox)")]
     [SerializeField] private float visualFeedbackDuration = 0.1f;
@@ -33,7 +35,7 @@ public class AutoAttacker : MonoBehaviour
 
     private void Update()
     {
-        Transform target = targetFinder.NearestTarget;
+        target = targetFinder.NearestTarget;
 
         if (target == null) return;
 
@@ -91,5 +93,19 @@ public class AutoAttacker : MonoBehaviour
     public void OnAnimationPlayed(int animHash)
     {
         OnAttackExecuted?.Invoke(animHash);
+    }
+
+    public void DealMeleeDamage()
+    {
+        if (target == null) return;
+
+        float damage = statsManager.CurrentAttackDamage;
+        UnitStatsManager enemyStats = target.GetComponent<UnitStatsManager>();
+
+        if (enemyStats != null)
+        {
+            enemyStats.TakeDamage(damage);
+            Debug.Log($"{gameObject.name} dealt {damage} melee damage to {target.name}!");
+        }
     }
 }
