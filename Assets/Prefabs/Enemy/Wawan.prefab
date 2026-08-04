@@ -18,9 +18,9 @@ GameObject:
   - component: {fileID: 2752657104940140167}
   - component: {fileID: 2567535746561986189}
   - component: {fileID: 1638871999436397281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wawan
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,6 +156,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UnitStatsManager
   characterData: {fileID: 11400000, guid: 2197a393b5b0b3b489856c6e387c46f5, type: 2}
   unitDied: {fileID: 0}
+  currentHealth: 0
+  currentMovementSpeed: 0
+  currentAttackDamage: 0
+  currentRotationSpeed: 0
+  currentAttackRate: 0
+  currentAttackRange: 0
 --- !u!114 &2339590638204090866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,10 +174,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4302d0ed936573045bedc2ca8f2658f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetFinder
-  detectionRadius: 5
+  detectionRadius: 10
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 640
   scanInterval: 0.2
 --- !u!114 &2752657104940140167
 MonoBehaviour:

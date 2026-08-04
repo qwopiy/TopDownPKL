@@ -8,19 +8,14 @@ public class MeleeAttackSO : AttackBehaviorSO
 
     [SerializeField] private string animationName;
     private int animHash;
-    public override void ExecuteAttack(GameObject attacker, Transform target, float damage)
+
+    private Transform target;
+    private float damage;
+    public override void ExecuteAttack(GameObject attacker, Transform _target, float _damage)
     {
         animHash = Animator.StringToHash(animationName);
 
         autoAttacker = attacker.GetComponent<AutoAttacker>();
-
-        UnitStatsManager enemyStats = target.GetComponent<UnitStatsManager>();
-        if (enemyStats != null)
-        {
-            enemyStats.TakeDamage(damage);
-            autoAttacker.OnAnimationPlayed(animHash);
-
-            Debug.Log($"{attacker.name} memukul {target.name} dari jarak dekat!");
-        }
+        autoAttacker.OnAnimationPlayed(animHash);
     }
 }

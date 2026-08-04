@@ -19,4 +19,4 @@ MonoBehaviour:
   attackDamage: 0
   attackRange: 5
   attackRate: 2
-  attackBehavior: {fileID: 11400000, guid: b874ceb198349cd489992a711b3a08b4, type: 2}
+  attackBehavior: {fileID: 11400000, guid: 89489977fcd82ee438d34efa6dbeb768, type: 2}

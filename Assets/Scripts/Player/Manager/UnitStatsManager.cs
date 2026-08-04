@@ -9,12 +9,12 @@ public class UnitStatsManager : MonoBehaviour
 
     private List<StatsModifier> activeModifiers = new List<StatsModifier>();
 
-    private float currentHealth;
-    private float currentMovementSpeed;
-    private float currentAttackDamage;
-    private float currentRotationSpeed;
-    private float currentAttackRate;
-    private float currentAttackRange;
+    public float currentHealth;
+    public float currentMovementSpeed;
+    public float currentAttackDamage;
+    public float currentRotationSpeed;
+    public float currentAttackRate;
+    public float currentAttackRange;
 
     public float CurrentMovementSpeed => CalculateStat(StatType.MovementSpeed, currentMovementSpeed);
     public float CurrentAttackDamage => CalculateStat(StatType.AttackDamage, currentAttackDamage);
@@ -110,8 +110,17 @@ public class UnitStatsManager : MonoBehaviour
 
     private void Die()
     {
+
+        PatrolController patrol = GetComponent<PatrolController>();
+
+        if (patrol != null)
+        {
+            patrol.Spawner.NotifyEnemyDead(gameObject);
+        }
+
+
         Debug.Log($"{gameObject.name} telah dikalahkan!");
         unitDied?.Raise();
-        gameObject.SetActive(false); 
+        Destroy(gameObject); 
     }
 }

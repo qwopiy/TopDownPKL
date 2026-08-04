@@ -334,6 +334,8 @@ GameObject:
   - component: {fileID: 2366482609571069550}
   - component: {fileID: 3141878619069696156}
   - component: {fileID: 5396860347973578262}
+  - component: {fileID: 5971668703762650185}
+  - component: {fileID: -1476002052829328519}
   m_Layer: 0
   m_Name: Witch_Base
   m_TagString: Untagged
@@ -373,6 +375,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UnitStatsManager
   characterData: {fileID: 11400000, guid: ad2c9758775afc6499942bf7de7c99b6, type: 2}
   unitDied: {fileID: 11400000, guid: 05656b85f6f350e41a7ddaa5aaaf0a72, type: 2}
+  currentHealth: 0
+  currentMovementSpeed: 0
+  currentAttackDamage: 0
+  currentRotationSpeed: 0
+  currentAttackRate: 0
+  currentAttackRange: 0
 --- !u!114 &3347214549602545766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,10 +446,10 @@ Animator:
   m_GameObject: {fileID: 1679424419653922518}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 0dcad412e4df7364880958fbda1ede6b, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8d53bc7003dc5a54fa6a264c2260c7dd, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
@@ -450,6 +458,38 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5971668703762650185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679424419653922518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb674dd4b5dd97479f34fa50fe7d3b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnCircleColliderChecker
+  searchRadius: 4
+  maxAttempts: 12
+  clearance: 0.5
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 713
+--- !u!114 &-1476002052829328519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679424419653922518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23eefb22036d96341a8d2c6393d914fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitAnimation
+  isAttacking: 0
+  isInAbility: 0
 --- !u!1 &1992531341309234131
 GameObject:
   m_ObjectHideFlags: 0

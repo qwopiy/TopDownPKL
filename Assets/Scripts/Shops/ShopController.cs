@@ -43,6 +43,17 @@ public class ShopController : MonoBehaviour
         {
             UpgradeDataSO selectedUpgradeData = selectedUpgrade.GetUpgradeData();
             Debug.Log("Confirmed Upgrade: " + selectedUpgradeData.upgradeName);
+
+            if (PlayerUpgradeManager.Instance.TryPurchaseUpgrade(selectedUpgradeData.upgradePrice))
+            {
+                Debug.Log("Upgrade purchased successfully.");
+            }
+            else
+            {
+                Debug.LogWarning("Not enough coins to purchase the upgrade.");
+                return;
+            }
+
             if (squadAnchor != null)
             {
                 selectedUpgrade.ApplyCard(squadAnchor);
