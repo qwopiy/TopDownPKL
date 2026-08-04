@@ -11,8 +11,8 @@ public class WaveManager : MonoBehaviour
 
     [Header("Wave Settings")]
     [SerializeField] private float timeBetweenWaves = 10f;
-    [SerializeField] private int baseEnemyCount = 10;
-    [SerializeField] private int enemyIncreasePerWave = 3;
+    [SerializeField] private int baseEnemyCount = 6;
+    [SerializeField] private int enemyIncreasePerWave = 1;
     [SerializeField] private float preparationTime = 30f;
 
 

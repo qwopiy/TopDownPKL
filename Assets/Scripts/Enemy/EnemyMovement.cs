@@ -2,10 +2,12 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class EnemyMovement : MonoBehaviour
+public class EnemyMovement : MonoBehaviour, IMovementProvider
 {
     public NavMeshAgent agent;
     private UnitStatsManager stats;
+    public float CurrentSpeed => agent != null ? agent.velocity.magnitude : 0f;
+    public bool IsMoving => CurrentSpeed > 0.1f;
 
     private void Start()
     {
