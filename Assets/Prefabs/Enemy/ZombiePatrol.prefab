@@ -518,6 +518,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ade85de830e243143b56b403611ad348, type: 3}
       insertIndex: -1
       addedObject: {fileID: 849091151155805830}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ade85de830e243143b56b403611ad348, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8589990242308799300}
   m_SourcePrefab: {fileID: 100100000, guid: ade85de830e243143b56b403611ad348, type: 3}
 --- !u!1 &347932689523489096 stripped
 GameObject:
@@ -573,6 +576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61da7e3cf73c9df44bcd0012f31ece2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AutoAttacker
+  attackRate: 0
   visualFeedbackDuration: 0.1
 --- !u!114 &198385258915744996
 MonoBehaviour:
@@ -649,3 +653,16 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.93981004, z: 0}
+--- !u!114 &8589990242308799300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347932689523489096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34224479bfb815b4ebf2360d64850e81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResourceDropper
+  resourcePrefab: {fileID: 2036437468204183001, guid: 37d65b0647989c64bba4a75e2f28e6a1, type: 3}

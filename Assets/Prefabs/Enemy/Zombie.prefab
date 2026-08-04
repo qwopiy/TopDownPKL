@@ -573,6 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61da7e3cf73c9df44bcd0012f31ece2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AutoAttacker
+  attackRate: 0
   visualFeedbackDuration: 0.1
 --- !u!114 &198385258915744996
 MonoBehaviour:
