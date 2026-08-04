@@ -607,6 +607,8 @@ MonoBehaviour:
   waypointReachDistance: 0.3
   patrolRoute: {fileID: 0}
   currentState: 0
+  minIdleTime: 5
+  maxIdleTime: 10
 --- !u!136 &849091151155805830
 CapsuleCollider:
   m_ObjectHideFlags: 0

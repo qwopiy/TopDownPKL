@@ -572,6 +572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1650f4c9de7253459583646f13a239f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
+  agent: {fileID: 0}
 --- !u!114 &1727930330116771299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -619,6 +620,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatrolController
   waypointReachDistance: 0.3
+  patrolRoute: {fileID: 0}
+  currentState: 0
+  minIdleTime: 5
+  maxIdleTime: 10
 --- !u!136 &849091151155805830
 CapsuleCollider:
   m_ObjectHideFlags: 0

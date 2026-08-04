@@ -3563,6 +3563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1650f4c9de7253459583646f13a239f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
+  agent: {fileID: 0}
 --- !u!114 &-3705668444441738489
 MonoBehaviour:
   m_ObjectHideFlags: 0

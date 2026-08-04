@@ -30,4 +30,9 @@ public class EnemyController : MonoBehaviour
             movement.MoveTo(tower.position);
         }
     }
+
+    private void OnDestroy()
+    {
+        WaveManager.Instance.EnemyDied();
+    }
 }

@@ -121,6 +121,6 @@ public class UnitStatsManager : MonoBehaviour
 
         Debug.Log($"{gameObject.name} telah dikalahkan!");
         unitDied?.Raise();
-        gameObject.SetActive(false); 
+        Destroy(gameObject); 
     }
 }
